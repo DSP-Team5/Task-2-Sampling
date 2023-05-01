@@ -1,13 +1,8 @@
-from flask import Flask, render_template,request, jsonify
 import numpy as np
 from scipy.fft import fft
+from flask import Flask, render_template,request, jsonify
 
 app = Flask(__name__)
-
-@app.route('/')
-def Sampling_Studio():
-    return render_template('main.html')
-
 @app.route('/calculate-fft-max', methods=['POST'])
 def calculate_fft_max():
     array = request.get_json()
@@ -26,6 +21,3 @@ def calculate_fft_max():
     # Get the frequency corresponding to the maximum magnitude
     max_frequency = frequencies[max_magnitude_index]
     return jsonify({'fftMaxMagnitude': max_frequency})
-
-if __name__ == '__main__':
-    app.run(debug=True)
