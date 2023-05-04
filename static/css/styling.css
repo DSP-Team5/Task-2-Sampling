@@ -10,7 +10,6 @@ h1 {
   display: flex;
   justify-content: center;
   font-size: 50px;
-  margin-right: 400px;
   color: #20232b;
 
 }
@@ -27,7 +26,10 @@ img{
   display: flex;
   justify-content: center;
   width: 1600px;
-  margin-top: -50px;
+  margin-top: -30px;
+  margin-left: 350px;
+  
+
 }
 
 .center {
@@ -57,21 +59,19 @@ img{
 
 .bottomnav {
 
-  width: 70%;
+  width: 90%;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 0 20px;
-  margin-left: 100px;
+  margin-left: 70px;
   border-radius: 20px;
-  height: 450px;
+  height: 350px;
+  
 }
 
 
-.main {
-  margin-left: 300px;
-}
 
 #mixSignalbtn {
   font-size: 15px;
@@ -84,11 +84,7 @@ img{
   background-color: #dbdbdb
 }
 
-.container {
-  justify-content: start;
-  
-  
-}
+
 
 .mixer {
   width: 300px;
@@ -102,7 +98,7 @@ img{
   width: 300px;
   text-align: center;
   color: rgb(0, 0, 0);
-  margin-bottom: 230px;
+  margin-bottom: 100px;
 }
 
 .sampling {
@@ -110,7 +106,7 @@ img{
   width: 300px;
   text-align: center;
   color: rgb(0, 0, 0);
-  margin-bottom: 120px;
+  margin-bottom: 130px;
 }
 
 #delete {
@@ -139,11 +135,45 @@ img{
   font-size: 30px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #dbdbdb;
+  background-color: white;
+  margin-left: 300px;  
+  border: #000000 solid 2px;
+  
 }
 
 #save:hover {
-  background-color: #9c9c9c;
+  background-color: #dbdbdb;
+}
+
+.upload {
+
+  width: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  font-size: 24px;
+  margin-left: 300px;
+}
+
+.file-upload-button {
+  background-color: white;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  border: #000000 solid 1px;
+  margin-right: 750px;
+}
+
+.file-upload-button:hover {
+  background-color: #dbdbdb;
 }
 
 #Amplitude , #fre2{
@@ -151,33 +181,7 @@ img{
 }
 
 
-.upload {
 
-  width: 300px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  margin-bottom: 20px;
-}
-
-.file-upload-button {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: none;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  border: #000000 solid 1px;
-}
-
-.file-upload-button:hover {
-  background-color: #dbdbdb;
-}
 
 
 
@@ -194,7 +198,8 @@ img{
 
 .save_sig {
   height: 100px;
-  margin-top: 50px;
+  margin-top: -10px;
+  margin-left: 100px;
   display: flex;
   justify-content: center;
 }
