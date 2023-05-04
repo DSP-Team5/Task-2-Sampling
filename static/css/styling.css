@@ -146,6 +146,11 @@ img{
   background-color: #9c9c9c;
 }
 
+#Amplitude , #fre2{
+  margin-left: 35px;
+}
+
+
 .upload {
 
   width: 300px;
@@ -154,6 +159,7 @@ img{
   justify-content: center;
   text-align: center;
   color: rgb(0, 0, 0);
+  margin-bottom: 20px;
 }
 
 .file-upload-button {
