@@ -12,17 +12,14 @@
 
     <title>Sampling studio </title>
 
+
 </head>
 
-<body>
+<body >
 
+    <div class="main" >
 
-
-
-    <div class="main">
-
-        <h1>Sampling Studio</h1>
-
+        <h1><img src="./logo.PNG" >Sampling Studio</h1>
 
         <div class="container">
             <div class="row">
@@ -34,6 +31,7 @@
                 </div>
             </div>
             <div class="bottomnav">
+
                 <div class="mixer">
                     <h3>Signal Mixer</h3>
                     <label for="maxfreq" id="frel">Frequency of mixed signal</label>
@@ -53,7 +51,6 @@
                         <input type="file" id="sig" name="signal" accept=".xlsx, .xls, .csv" oninput="importSignal()">
                     </div>
                 </div>
-                <hr>
 
 
                 <div class="noise-container">
@@ -64,21 +61,20 @@
                         <span id="snrOutput"></span><br><br>
                         <button type="button" id="deletenoise">Remove noise</button>
                     </div>
-                    <br>
+                    
                 </div>
 
                 <div class="sampling">
                     <h3>Sampling</h3>
                     <input type="range" min="0" max="60" value="11" class="slider" id="sampling"><br>
                     Sampling rate : <span id="SROutput"></span>
-                </div><br>
-                <hr>
-
-                <br>
-
-                <div class="save_sig">
-                    <a id="download"><button type="button" id="save">Save Signal</button></a>
+                    
+                    <div class="save_sig">
+                        <a id="download"><button type="button" id="save">Save</button></a>
+                    </div>
                 </div>
+
+               
             </div>
 
 
@@ -98,5 +94,6 @@
     <script src="../static/js/file.js"></script>
 
 </body>
+
 
 </html>

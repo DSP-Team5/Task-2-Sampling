@@ -1,20 +1,33 @@
 * body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgba(122, 206, 255, 0.227);
+  height: 1000px;
 }
+
+
 
 h1 {
   display: flex;
   justify-content: center;
   font-size: 50px;
+  margin-right: 400px;
   color: #20232b;
 
+}
+
+img{
+  width: 90px;
+  height: 60px;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .row {
   display: flex;
   justify-content: center;
   width: 1600px;
-  border-radius: 10px;
+  margin-top: -50px;
 }
 
 .center {
@@ -28,7 +41,7 @@ h1 {
 }
 
 #graph1,
-#graph2 {
+#graph2, #graph3 {
   height: 500px;
   width: 700px;
   margin-bottom: 10px;
@@ -40,22 +53,19 @@ h1 {
 
 
 
-.mixer {
-  width: 300px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 18px;
 
-}
 
 .bottomnav {
 
-  width: 100%;
+  width: 70%;
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-around;
   padding: 0 20px;
+  margin-left: 100px;
+  border-radius: 20px;
+  height: 450px;
 }
 
 
@@ -76,7 +86,31 @@ h1 {
 
 .container {
   justify-content: start;
+  
+  
+}
 
+.mixer {
+  width: 300px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+.noise-container {
+  font-size: 18px;
+  width: 300px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 230px;
+}
+
+.sampling {
+  font-size: 18px;
+  width: 300px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 120px;
 }
 
 #delete {
@@ -102,22 +136,14 @@ h1 {
 }
 
 #save {
-  font-size: 15px;
+  font-size: 30px;
   padding: 10px;
   border-radius: 10px;
-  background-color: white;
+  background-color: #dbdbdb;
 }
 
 #save:hover {
-  background-color: #dbdbdb
-}
-
-.noise-container {
-  font-size: 18px;
-  width: 300px;
-  border-radius: 10px;
-  text-align: center;
-  color: rgb(0, 0, 0);
+  background-color: #9c9c9c;
 }
 
 .upload {
@@ -149,14 +175,6 @@ h1 {
 
 
 
-.sampling {
-  font-size: 18px;
-  width: 300px;
-  border-radius: 10px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-}
-
 #deletenoise {
   font-size: 15px;
   padding: 10px;
@@ -169,6 +187,8 @@ h1 {
 }
 
 .save_sig {
+  height: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
@@ -192,7 +212,7 @@ h1 {
   }
 
   #graph1,
-  #graph2 {
+  #graph2, #graph3 {
     height: 300px;
     width: 400px;
   }
