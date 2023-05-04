@@ -19,25 +19,29 @@
 
     <div class="main" >
 
-        <h1><img src="./logo.PNG" >Sampling Studio</h1>
+        <h1> 
+            
+            <div class="upload">
+            <label for="sig" class="file-upload-button">Browse Signal</label>
+            <input type="file" id="sig" name="signal" accept=".xlsx, .xls, .csv" oninput="importSignal()">
+        </div>
+        
+        <img src="./logo.PNG" >Sampling Studio <div class="save_sig">
+            <a id="download"><button type="button" id="save">Save</button></a>
+        </div> </h1>
+        
 
         <div class="container">
-            <div class="row">
-                <div class="column" id="graph1">
-                </div>
-                <div class="column" id="graph2">
-                </div>
-                <div class="column" id="graph3">
-                </div>
-            </div>
+            
             <div class="bottomnav">
 
                 <div class="mixer">
                     <h3>Signal Mixer</h3>
-                    <label for="maxfreq" id="frel">Frequency of mixed signal</label>
+                    
+                    <label for="maxfreq" id="fre1">Frequency of mixed signal</label>
                     <input type="range" min="1" max="15" value="5" class="slider" id="maxfreq">
                     F: <span id="freqOutput"></span><br><br>
-                    <label for="Amplitude" id="frel">Max Amplitude of mixed signal</label>
+                    <label for="Amplitude" id="fre2">Max Amplitude of mixed signal</label>
                     <input type="range" min="1" max="15" value="5" class="slider" id="Amplitude">
                     Amp: <span id="ampOutput"></span><br><br>
                     <button type="button" name="button" id="mixSignalbtn">Add Mixed Signal</button>
@@ -46,10 +50,7 @@
                         <select id="addedcomponents"></select>
                         <button type="button" id="delete">Remove Signal</button>
                     </div><br>
-                    <div class="upload">
-                        <label for="sig" class="file-upload-button">Browse Signal</label>
-                        <input type="file" id="sig" name="signal" accept=".xlsx, .xls, .csv" oninput="importSignal()">
-                    </div>
+                    
                 </div>
 
 
@@ -69,17 +70,20 @@
                     <input type="range" min="0" max="60" value="11" class="slider" id="sampling"><br>
                     Sampling rate : <span id="SROutput"></span>
                     
-                    <div class="save_sig">
-                        <a id="download"><button type="button" id="save">Save</button></a>
-                    </div>
                 </div>
 
                
             </div>
 
 
-
-
+            <div class="row">
+                <div class="column" id="graph1">
+                </div>
+                <div class="column" id="graph2">
+                </div>
+                <div class="column" id="graph3">
+                </div>
+            </div>
 
 
 
