@@ -14,7 +14,7 @@ h1 {
 
 }
 
-img{
+img {
   width: 90px;
   height: 60px;
   position: relative;
@@ -28,7 +28,7 @@ img{
   width: 1600px;
   margin-top: -30px;
   margin-left: 350px;
-  
+
 
 }
 
@@ -43,7 +43,8 @@ img{
 }
 
 #graph1,
-#graph2, #graph3 {
+#graph2,
+#graph3 {
   height: 500px;
   width: 700px;
   margin-bottom: 10px;
@@ -68,7 +69,7 @@ img{
   margin-left: 70px;
   border-radius: 20px;
   height: 350px;
-  
+
 }
 
 
@@ -127,7 +128,7 @@ img{
   background-color: #dbdbdb
 }
 
-#sig {
+/* #sig {
   display: none;
 }
 
@@ -136,16 +137,16 @@ img{
   padding: 10px;
   border-radius: 10px;
   background-color: white;
-  margin-left: 300px;  
+  margin-left: 300px;
   border: #000000 solid 2px;
-  
-}
+
+} */
 
 #save:hover {
   background-color: #dbdbdb;
 }
 
-.upload {
+/* .upload {
 
   width: 100px;
   border-radius: 10px;
@@ -170,18 +171,80 @@ img{
   justify-content: center;
   border: #000000 solid 1px;
   margin-right: 750px;
-}
+} */
 
 .file-upload-button:hover {
   background-color: #dbdbdb;
 }
 
-#Amplitude , #fre2{
+#Amplitude,
+#fre2 {
   margin-left: 35px;
 }
 
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.upload,
+.save_sig {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.file-upload-button {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+button#save {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 
 
@@ -196,13 +259,14 @@ img{
   background-color: #dbdbdb;
 }
 
+/* 
 .save_sig {
   height: 100px;
   margin-top: -10px;
   margin-left: 100px;
   display: flex;
   justify-content: center;
-}
+} */
 
 @media only screen and (max-width: 768px) {
   body {
@@ -223,7 +287,8 @@ img{
   }
 
   #graph1,
-  #graph2, #graph3 {
+  #graph2,
+  #graph3 {
     height: 300px;
     width: 400px;
   }

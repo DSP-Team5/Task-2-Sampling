@@ -15,29 +15,31 @@
 
 </head>
 
-<body >
+<body>
 
-    <div class="main" >
+    <div class="main">
 
-        <h1> 
-            
-            <div class="upload">
-            <label for="sig" class="file-upload-button">Browse Signal</label>
-            <input type="file" id="sig" name="signal" accept=".xlsx, .xls, .csv" oninput="importSignal()">
-        </div>
-        
-        <img src="./logo.PNG" >Sampling Studio <div class="save_sig">
-            <a id="download"><button type="button" id="save">Save</button></a>
-        </div> </h1>
-        
+        <header>
+            <div class="top-left">
+                <div class="upload">
+                    <label for="sig" class="file-upload-button">Browse Signal</label>
+                    <input type="file" id="sig" name="signal" accept=".xlsx, .xls, .csv" oninput="importSignal()">
+                </div>
+                <div class="save_sig">
+                    <a id="download"><button type="button" id="save">Save</button></a>
+                </div>
+            </div>
+            <h1 class="title">Sampling Studio</h1>
+            <img src="./logo.PNG" alt="Sampling Studio Logo">
+        </header>
 
         <div class="container">
-            
+
             <div class="bottomnav">
 
                 <div class="mixer">
                     <h3>Signal Mixer</h3>
-                    
+
                     <label for="maxfreq" id="fre1">Frequency of mixed signal</label>
                     <input type="range" min="1" max="15" value="5" class="slider" id="maxfreq">
                     F: <span id="freqOutput"></span><br><br>
@@ -50,7 +52,7 @@
                         <select id="addedcomponents"></select>
                         <button type="button" id="delete">Remove Signal</button>
                     </div><br>
-                    
+
                 </div>
 
 
@@ -62,17 +64,17 @@
                         <span id="snrOutput"></span><br><br>
                         <button type="button" id="deletenoise">Remove noise</button>
                     </div>
-                    
+
                 </div>
 
                 <div class="sampling">
                     <h3>Sampling</h3>
                     <input type="range" min="0" max="60" value="11" class="slider" id="sampling"><br>
                     Sampling rate : <span id="SROutput"></span>
-                    
+
                 </div>
 
-               
+
             </div>
 
 
