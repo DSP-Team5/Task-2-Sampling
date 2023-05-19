@@ -305,7 +305,7 @@ freqSlider.oninput = () => {
 //generate signal funcntion
 //let component={amplitude:0,freq:0, x :[],y :[],name:"freq="+0+",amp="+0};
 function generate(amp, f, times = timeofthesignal, step = stepsofthesignals) {
-  const exp = "amp * Math.sin(2*pi*x*f)";
+  const exp = "amp * Math.sin(1*pi*x*f)";
   const pi = Math.PI;
   FMAX = f;
   signalAmplitude = amp;
