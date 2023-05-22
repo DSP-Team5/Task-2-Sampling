@@ -1,0 +1,78 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "fft",
+        "importPath": "scipy.fft",
+        "description": "scipy.fft",
+        "isExtraImport": true,
+        "detail": "scipy.fft",
+        "documentation": {}
+    },
+    {
+        "label": "Sampling_Studio",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def Sampling_Studio():\n    return render_template('main.html')\n@app.route('/calculate-fft-max', methods=['POST'])\ndef calculate_fft_max():\n    array = request.get_json()\n    fft = np.fft.fft(array)\n# Get the magnitudes of the FFT coefficients\n    fft_magnitudes = np.abs(fft)\n    # Get the frequencies corresponding to the FFT coefficients\n    sampling_rate = 1000  # This is the number of samples per second",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_fft_max",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def calculate_fft_max():\n    array = request.get_json()\n    fft = np.fft.fft(array)\n# Get the magnitudes of the FFT coefficients\n    fft_magnitudes = np.abs(fft)\n    # Get the frequencies corresponding to the FFT coefficients\n    sampling_rate = 1000  # This is the number of samples per second\n    frequencies = np.fft.fftfreq(len(fft_magnitudes), 1 / sampling_rate)\n    # Get the index of the maximum magnitude of the FFT coefficients\n    max_magnitude_index = np.argmax(fft_magnitudes)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef Sampling_Studio():\n    return render_template('main.html')\n@app.route('/calculate-fft-max', methods=['POST'])\ndef calculate_fft_max():\n    array = request.get_json()\n    fft = np.fft.fft(array)\n# Get the magnitudes of the FFT coefficients\n    fft_magnitudes = np.abs(fft)",
+        "detail": "app",
+        "documentation": {}
+    }
+]
