@@ -286,6 +286,21 @@ img {
   font-size: 14px;
 }
 
+#apply_2fmax {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#apply_2fmax:hover {
+  background-color: #dbdbdb;
+}
+
+#apply_2fmax {
+  font-size: 14px;
+}
+
 .sampling {
   font-size: 18px;
   width: 300px;
@@ -344,7 +359,7 @@ img {
     width: 200px;
     font-size: 14px;
   }
-  
+
   .upload {
     width: 200px;
   }

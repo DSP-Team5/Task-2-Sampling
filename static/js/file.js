@@ -178,6 +178,7 @@ function importSignal() {
 var SRSLider = document.getElementById("sampling");
 var SROutput = document.getElementById("SROutput");
 var applyButton = document.getElementById("applyButton");
+var apply_2fmax = document.getElementById("apply_2fmax");
 SROutput.innerHTML = SRSLider.value;
 SROutput.innerHTML = SRSLider.value + " Hz";
 ///showing sampling rate
@@ -283,6 +284,98 @@ applyButton.addEventListener("click", async function () {
   });
 });
 
+apply_2fmax.addEventListener("click", async function () {
+    let fmaxviafft = 0;
+    $(document).ready(function () {
+      var array = Amplitude1;
+      $.ajax({
+        type: "POST",
+        url: "/calculate-fft-max",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(array),
+        dataType: "json",
+        success: function (data) {
+          //$("#fft-max-magnitude").text(data.fftMaxMagnitude);
+          console.log(data.fftMaxMagnitude); fmaxviafft = data.fftMaxMagnitude;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        }
+      });
+    });
+  
+  
+    let samplingRate = SRSLider.value;
+    sampleX = [];
+    sampleY = [];
+  
+    let step = (Timeee.length) / Timeee[Timeee.length - 2] / (samplingRate); /////////// sampling step equation
+    ////////// (samples * sampling period )
+  
+  
+    let index
+  
+    for (let i = 0; i < Timeee.length; i += step) {
+      index = Math.round(i) //saving x and y coordinates to demonstrate the samples
+      sampleX.push(Timeee[index]);
+      sampleY.push(Amplitude1[index]);
+    }
+  
+    //console.log(sampleX.length);
+    if (!Stopper) {
+      Plotly.addTraces(plotDiv, { x: sampleX, y: sampleY, type: 'scatter', name: "sampled points", mode: 'markers', });
+      Stopper = true;
+    }
+    else {
+      Plotly.deleteTraces(plotDiv, 1);//Plotly.deleteTraces(plotDiv2, 0);
+      Plotly.addTraces(plotDiv, { x: sampleX, y: sampleY, type: 'scatter', name: "sampled points", mode: 'markers', });
+  
+    }
+    //RECONSTRUCTION
+    // Resample using sinc interpolation
+    constructx = [...Timeee];
+    constructy = [];
+  
+    let Fs = samplingRate;
+    //calculating the reconstructed signal using sinc interpolation
+    for (let itr = 0; itr < Timeee.length; itr += 1) {
+      let interpolatedValue = 0;
+      for (let itrS = 0; itrS < sampleY.length; itrS += 1) {
+        if (!isNaN(constructx[itr])) {
+          let intrpolationComp =
+            Math.PI * (constructx[itr] - itrS / (Fs)) * Fs;
+          if (!isNaN(sampleY[itrS])) {
+            interpolatedValue += sampleY[itrS] *
+              (Math.sin(intrpolationComp) / intrpolationComp);
+          }
+        }
+      }
+      constructy.push(interpolatedValue);
+    }
+  
+  
+  
+  
+  
+    //console.log(constructy);
+    const trace = {
+      x: constructx,
+      y: constructy,
+      type: 'scatter',
+      mode: 'lines',
+      line: {
+        color: 'blue'
+      },
+      name: 'Reconstructed Signal'
+    };
+    Plotly.newPlot(plotDiv2, [trace], layout2, config2);
+    Plotly.newPlot(plotDiv3, [trace], layout3, config3);
+    Plotly.addTraces(plotDiv3, {
+      x: Timeee, y: Amplitude1, type: 'scatter', name: "original", line: {
+        color: 'red'
+      }
+    });
+});
 
 
 ///Signal mixing
