@@ -212,7 +212,7 @@ applyButton.addEventListener("click", async function () {
   });
 
 
-  let samplingRate = SRSLider.value;
+  let samplingRate = 2 * SRSLider.value;
   sampleX = [];
   sampleY = [];
 
@@ -426,7 +426,7 @@ function generate(amp, f, times = timeofthesignal, step = stepsofthesignals) {
 }
 
 mixSignalbtn.onclick = async () => {
-  generatedsignal = generate(ampSlider.value, freqSlider.value);
+  generatedsignal = generate(ampSlider.value, 2* freqSlider.value);
   if (Stopper) { Plotly.deleteTraces(plotDiv, 1); Stopper = false; }
   if (numberofcomponents == 0) {
     Timeee = [...generatedsignal.x];
