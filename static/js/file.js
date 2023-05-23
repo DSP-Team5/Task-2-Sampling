@@ -305,7 +305,7 @@ apply_2fmax.addEventListener("click", async function () {
     });
   
   
-    let samplingRate = SRSLider.value;
+    let samplingRate = 4* freqSlider.value;
     sampleX = [];
     sampleY = [];
   
